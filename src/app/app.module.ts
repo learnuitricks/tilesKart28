@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { TilesComponent } from './Tiles/tiles/tiles.component';
 import { LoginComponent } from './users/login/login.component';
 import { StatusPipe } from './Shared/status.pipe';
+import { TileComponent } from './Tiles/tile/tile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TilesComponent,
     LoginComponent,
-    StatusPipe
+    StatusPipe,
+    TileComponent
   ],
   imports: [
     BrowserModule,
