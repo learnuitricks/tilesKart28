@@ -1,0 +1,15 @@
+img{
+    height: 50px;
+    width: 50px;
+}
+
+
+tr:nth-child(even){
+    background-color: lightgray;
+    color:black;
+ }
+ 
+
+ div{
+     background-color: yellow;
+ }

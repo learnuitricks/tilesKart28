@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="card ">
+  <div class="card-header bg-primary">Tiles</div>
+  <div class="card-body o">
+
+    <div>
+        <select [(ngModel)]="selectedFilter" id="selectBox" name="filterBox">
+            <option *ngFor="let filter of filterOptions" value="{{filter}}"
+>{{filter}}</option>
+          </select>
+
+        <input type="text" name="" id="" [(ngModel)]="filterText">
+
+        <button class="btn btn-primary" (click)="filter()">Go</button>
+
+    </div>
+
+    <div>
+      selected filter is : {{selectedFilter}}
+    </div>
+
+    
+    <div>
+        filter text  is : {{filterText}}
+      </div>
+
+<table *ngIf="tiles && tiles.length > 0" class="table">
+    <thead>
+        <th>image</th>
+      <th>name</th>
+      <th>model</th>
+      <th>price</th>
+      <th>status</th>
+    </thead>
+    <tr *ngFor="let tile of filteredTiles">
+        <td><img [src]="imagePath + tile.image" alt=""></td>
+      <td>{{tile.name | uppercase}}</td>
+      <td>{{tile.model}}</td>
+      <td>{{tile.price | currency:'INR'}}</td>
+      <!-- <td>{{tile.status == 0? 'In Stock' : 'Out of Stock'}}</td> -->
+      <td>{{tile.status | status:'some data'}}</td>
+    </tr>
+   </table>
+
+  </div>
+  <div class="card-footer bg-primary"></div>
+</div>
+</div> 
+
+
+
+   <div *ngIf="tiles && tiles.length == 0">
+       No tiles available
+   </div>
+   
+   
+   
