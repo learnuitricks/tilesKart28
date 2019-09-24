@@ -1,1 +1,6 @@
-<p>tile works!</p>
+<td><img [src]="imagePath + tile.image" alt=""></td>
+<td>{{tile.name | uppercase}}</td>
+<td>{{tile.model}}</td>
+<td>{{tile.price | currency:'INR'}}</td>
+<!-- <td>{{tile.status == 0? 'In Stock' : 'Out of Stock'}}</td> -->
+<td>{{tile.status | status:'some data'}}</td>

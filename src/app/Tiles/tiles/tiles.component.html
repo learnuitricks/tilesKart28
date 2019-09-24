@@ -32,13 +32,7 @@
       <th>price</th>
       <th>status</th>
     </thead>
-    <tr *ngFor="let tile of filteredTiles">
-        <td><img [src]="imagePath + tile.image" alt=""></td>
-      <td>{{tile.name | uppercase}}</td>
-      <td>{{tile.model}}</td>
-      <td>{{tile.price | currency:'INR'}}</td>
-      <!-- <td>{{tile.status == 0? 'In Stock' : 'Out of Stock'}}</td> -->
-      <td>{{tile.status | status:'some data'}}</td>
+    <tr *ngFor="let tile of filteredTiles" app-tile [tile]="tile">
     </tr>
    </table>
 
