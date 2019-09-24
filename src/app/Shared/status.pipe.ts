@@ -13,6 +13,7 @@ export class StatusPipe implements PipeTransform {
     }
     else{
       return "Out of Stock";
+      // commented to code to show how pull works from git
     }
   }
 
