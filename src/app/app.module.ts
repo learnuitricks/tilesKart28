@@ -9,6 +9,7 @@ import { TilesComponent } from './Tiles/tiles/tiles.component';
 import { LoginComponent } from './users/login/login.component';
 import { StatusPipe } from './Shared/status.pipe';
 import { TileComponent } from './Tiles/tile/tile.component';
+import { StarComponent } from './Shared/star/star.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { TileComponent } from './Tiles/tile/tile.component';
     TilesComponent,
     LoginComponent,
     StatusPipe,
-    TileComponent
+    TileComponent,
+    StarComponent
   ],
   imports: [
     BrowserModule,

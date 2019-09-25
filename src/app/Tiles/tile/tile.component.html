@@ -4,3 +4,4 @@
 <td>{{tile.price | currency:'INR'}}</td>
 <!-- <td>{{tile.status == 0? 'In Stock' : 'Out of Stock'}}</td> -->
 <td>{{tile.status | status:'some data'}}</td>
+<td><app-star [rating]="tile.rating"></app-star></td>
