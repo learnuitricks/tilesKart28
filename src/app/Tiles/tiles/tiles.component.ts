@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ITile } from '../itile';
 import { TileService } from '../tile.service';
 
@@ -8,7 +8,8 @@ import { TileService } from '../tile.service';
   templateUrl: './tiles.component.html',
   styleUrls: ['./tiles.component.css']
 })
-export class TilesComponent {
+export class TilesComponent  implements OnInit{
+  
   //tiles = [];
 
   filterOptions: Array<string> = ["name", "model", "price"];
@@ -20,10 +21,21 @@ export class TilesComponent {
   tiles:Array<ITile>;
  
   constructor(private tileService:TileService) { 
-    //tileService = new TileService();
-    this.tiles = this.tileService.getTiles();
-    this.filteredTiles = this.tiles;
   }
+
+  ngOnInit(): void {
+     this.tileService.getTiles().subscribe((tiles)=>{
+       console.log('in call back of the web api');
+       this.tiles = tiles;
+       this.filteredTiles = this.tiles;
+     });
+
+     console.log('am i exectuted before tiles update')
+
+    
+  }
+
+
 
   filter(){
     console.log(this.selectedFilter);
