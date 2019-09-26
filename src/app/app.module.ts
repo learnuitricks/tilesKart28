@@ -28,6 +28,6 @@ import { StarComponent } from './Shared/star/star.component';
     
   ],
   providers: [],
-  bootstrap: [TilesComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
