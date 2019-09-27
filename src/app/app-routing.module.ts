@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './users/login/login.component';
 import { TilesComponent } from './Tiles/tiles/tiles.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { TileDetailComponent } from './Tiles/tile-detail/tile-detail.component';
 
 
 const routes: Routes = [{
@@ -11,6 +13,14 @@ const routes: Routes = [{
 {
   path:'tiles',
   component:TilesComponent
+},
+{
+  path:'tiles/:Id',
+  component:TileDetailComponent
+},
+{
+path:'welcome',
+component:WelcomeComponent
 },
 
 {

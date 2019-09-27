@@ -10,6 +10,8 @@ import { LoginComponent } from './users/login/login.component';
 import { StatusPipe } from './Shared/status.pipe';
 import { TileComponent } from './Tiles/tile/tile.component';
 import { StarComponent } from './Shared/star/star.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { TileDetailComponent } from './Tiles/tile-detail/tile-detail.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { StarComponent } from './Shared/star/star.component';
     LoginComponent,
     StatusPipe,
     TileComponent,
-    StarComponent
+    StarComponent,
+    WelcomeComponent,
+    TileDetailComponent
   ],
   imports: [
     BrowserModule,

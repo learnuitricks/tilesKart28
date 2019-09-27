@@ -15,4 +15,10 @@ export class TileService {
    return this.httpClient.get<Array<ITile>>(this.tilesAPIURL);
     // talk to back end to get the data
   }
+
+  getTile(id:number):Observable<ITile>{
+    return this.httpClient.get<ITile>(this.tilesAPIURL+`/${id}`);
+     // talk to back end to get the data
+   }
 }
+
