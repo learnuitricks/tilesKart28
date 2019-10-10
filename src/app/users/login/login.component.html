@@ -1,11 +1,57 @@
-user name : <input type="text" name="" id="userName" [(ngModel)]="userName">
-pass word : <input type="password" name="" id="password">
+<div class="container">
+    <div class="card ">
+    <div class="card-header bg-primary">Tiles</div>
+    <div class="card-body ">
+        <form name="login" #loginForm="ngForm">
+    <div class="form-group row" >
+        <label for="Username" class="col-md-4 col-form-label text-md-right">Username</label>
+        <div class="col-md-6">
+            <input type="text" class="form-control" name="userName" [(ngModel)]="userName" required #uName="ngModel" pattern="^[1-9][0-9]{5}$"/>
+            <div class="alert alert-danger" *ngIf="!uName.valid && uName.dirty && uName.errors?.required">
+                    user name is required ? due to required
+                </div>
 
-<div>
-    <input type="button" value="login" (click)="validateLogin()">
-</div>
+                <div class="alert alert-danger" *ngIf="!uName.valid && uName.dirty && uName.errors?.pattern">
+                    user name is not valid zip code ? pattern validation
+                </div>
 
+        </div>
+        
+    </div>
+      
+  <div class="form-group row">
+        <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+        <div class="col-md-6">
+            <input type="password" class="form-control" name="password" [(ngModel)]="passWord"  required />
+        </div>
+  </div>
+ <div class="col-md-6 offset-md-4 ">
+    <button class="btn btn-primary" (click)="login()" >Login</button>
+ </div>
+ <div>
+     uName pristine status : {{uName.pristine}}
+ </div>
 
-<div>
- current uN   {{userName}}
-</div>
+ <div>
+        uName dirty status : {{uName.dirty}}
+    </div>
+
+    <div>
+            uName valid status : {{uName.valid}}
+        </div>
+
+        <div>
+            is form valid : {{loginForm.valid}}
+        </div>
+
+        <div>
+            is form submitted : {{loginForm.submitted}}
+        </div>
+</form>
+ </div>
+ <div class="card-footer bg-primary"></div>
+ </div>
+ </div>
+ 
+                           
+ 
