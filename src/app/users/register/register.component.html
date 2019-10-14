@@ -1,0 +1,49 @@
+<div class="container" >
+    <form name="register" [formGroup]="registerForm">
+    <div class="form-group" >
+      <label for="userName">User Name</label>
+      <input type="text" class="form-control"   formControlName='userName'>
+    </div>
+
+    <div class="form-group" >
+      <label for="email">Email</label>
+      <input type="email"  class="form-control" formControlName="email" >
+    </div>
+    <div class="form-group" >
+      <label for="phoneNumber">Phone Number</label>
+      <input type="text"  class="form-control" formControlName="phoneNumber" >
+    </div>
+
+    
+<div formGroupName="billingAdress">
+  <h3>Billing Address</h3>
+  <label>
+    Door Number
+    <input type="text" formControlName="doorNumber">
+  </label>
+   <label>
+    City:
+    <input type="text" formControlName="city">
+  </label>
+ 
+   <label>
+    Pin Code:
+    <input type="text" formControlName="zip">
+  </label>
+</div>
+
+
+
+    <div>
+      <button class="btn btn-primary"  (click) ="registerUser()">Register</button>
+    </div>
+    </form>
+
+   
+   
+
+    <div>
+      form value : {{registerForm.value|json}}
+    </div>
+   </div>
+   

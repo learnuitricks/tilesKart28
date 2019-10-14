@@ -4,6 +4,7 @@ import { LoginComponent } from './users/login/login.component';
 import { TilesComponent } from './Tiles/tiles/tiles.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { TileDetailComponent } from './Tiles/tile-detail/tile-detail.component';
+import { RegisterComponent } from './users/register/register.component';
 
 
 const routes: Routes = [{
@@ -15,6 +16,10 @@ const routes: Routes = [{
   component:TilesComponent
 },
 {
+  path:'register',
+  component:RegisterComponent
+},
+{
   path:'tiles/:Id',
   component:TileDetailComponent
 },
@@ -24,10 +29,10 @@ component:WelcomeComponent
 },
 
 {
-  path:'',redirectTo:'login',pathMatch:'prefix'
+  path:'',redirectTo:'register',pathMatch:'prefix'
  },
  {
-  path:'**',redirectTo:'login',pathMatch:'prefix'
+  path:'**',redirectTo:'register',pathMatch:'prefix'
  }
  ];
 
