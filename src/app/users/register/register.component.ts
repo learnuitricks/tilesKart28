@@ -10,15 +10,16 @@ export class RegisterComponent implements OnInit {
 
   // create form control and bind it to the html control
   registerForm:FormGroup;
+  zipCodePattern:string = "^[1-9][0-9]{5}$";
   constructor(private fb: FormBuilder) { 
     this.registerForm = this.fb.group({
-      userName: ['kumar'],
+      userName: ['',Validators.required],
       email: ['abc@gmail.com'],
       phoneNumber: [''],
       billingAdress: this.fb.group({
         doorNumber: [''],
         city: [''],
-        zip : ['']
+        zip : ['',[Validators.required,Validators.pattern(this.zipCodePattern)]]
       }
       )
     })

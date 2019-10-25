@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './users/login/login.component';
-import { TilesComponent } from './Tiles/tiles/tiles.component';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { TileDetailComponent } from './Tiles/tile-detail/tile-detail.component';
 import { RegisterComponent } from './users/register/register.component';
+
+
 
 
 const routes: Routes = [{
@@ -12,16 +12,12 @@ const routes: Routes = [{
   component:LoginComponent
 },
 {
-  path:'tiles',
-  component:TilesComponent
+  path:'tiles', pathMatch:'prefix',
+  loadChildren:'./Tiles/tiles.module#TilesModule'
 },
 {
   path:'register',
   component:RegisterComponent
-},
-{
-  path:'tiles/:Id',
-  component:TileDetailComponent
 },
 {
 path:'welcome',

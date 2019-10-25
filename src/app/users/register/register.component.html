@@ -2,7 +2,10 @@
     <form name="register" [formGroup]="registerForm">
     <div class="form-group" >
       <label for="userName">User Name</label>
-      <input type="text" class="form-control"   formControlName='userName'>
+      <input type="text" class="form-control"   formControlName='userName' required>
+      <div class="alert alert-danger" *ngIf="registerForm.get('userName').status=='INVALID'" >
+        user name is required
+      </div>
     </div>
 
     <div class="form-group" >
@@ -30,12 +33,18 @@
     Pin Code:
     <input type="text" formControlName="zip">
   </label>
+  <div class="alert alert-danger"  *ngIf="registerForm.get('billingAdress').get('zip').status=='INVALID' && registerForm.get('billingAdress').get('zip').hasError('required')">
+    zip code is required
+  </div>
+  <div class="alert alert-danger" *ngIf="registerForm.get('billingAdress').get('zip').status=='INVALID' && registerForm.get('billingAdress').get('zip').hasError('pattern')">
+      zip code should be a valid zip code
+    </div>
 </div>
 
 
 
     <div>
-      <button class="btn btn-primary"  (click) ="registerUser()">Register</button>
+      <button class="btn btn-primary"  (click) ="registerUser()" [disabled]="!registerForm.valid">Register</button>
     </div>
     </form>
 

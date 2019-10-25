@@ -3,10 +3,11 @@ import { ITile } from './itile';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+
+
+@Injectable()
 export class TileService {
+
 
 
   tilesAPIURL:string = "http://demo5911200.mockable.io/tiles";

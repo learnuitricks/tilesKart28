@@ -1,4 +1,5 @@
 export interface ITile {
+  Id:string;
     name: string;
   model:string;
   price: number;

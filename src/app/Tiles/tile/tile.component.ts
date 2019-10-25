@@ -15,4 +15,9 @@ export class TileComponent implements OnInit {
   ngOnInit() {
   }
 
+  updateRating(newRating){
+    console.log(newRating);
+
+  }
+
 }

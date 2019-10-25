@@ -6,7 +6,8 @@ import { ITile } from '../itile';
 @Component({
   selector: 'app-tile-detail',
   templateUrl: './tile-detail.component.html',
-  styleUrls: ['./tile-detail.component.css']
+  styleUrls: ['./tile-detail.component.css'],
+  providers:[TileService]
 })
 export class TileDetailComponent implements OnInit {
 
@@ -25,6 +26,10 @@ export class TileDetailComponent implements OnInit {
     })
 
     // access the router parameter
+  }
+
+  navigateBack(){
+    console.log('route back')
   }
 
 }

@@ -6,7 +6,8 @@ import { TileService } from '../tile.service';
 @Component({
   selector: 'app-tiles',
   templateUrl: './tiles.component.html',
-  styleUrls: ['./tiles.component.css']
+  styleUrls: ['./tiles.component.css'],
+  providers:[TileService]
 })
 export class TilesComponent  implements OnInit{
   

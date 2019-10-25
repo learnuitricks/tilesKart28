@@ -8,10 +8,11 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent  {
   userName:string = '';
+  passWord:string = '';
 
   constructor(private routerService:Router) { }
 
-  validateLogin(){
+  login(){
 
     if(this.userName == ''){
       //alert('user name is required');// call back end api.
@@ -19,6 +20,7 @@ export class LoginComponent  {
     }
     else{
       console.log('user has logged in successfully');
+      sessionStorage.setItem('user',this.userName);
       this.routerService.navigate(['/tiles']);
     }
     
